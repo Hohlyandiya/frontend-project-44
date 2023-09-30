@@ -2,10 +2,10 @@ install:
 	npm ci
 
 brain-games:
-	node frontend-project-44/bin/brain-games.js
+	node bin/brain-games.js
 
 brain-even:
-	node frontend-project-44/bin/brain-even.js
+	node bin/brain-even.js
 
 publish:
 	npm publish --dry-run
