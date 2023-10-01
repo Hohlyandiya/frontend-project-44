@@ -3,11 +3,11 @@ import {getResultBrainEven} from '../src/index.js'
 import {getRandomInt} from '../src/random.js'
 import readlineSync from '../readline-sync/lib/readline-sync.js'
 
-const brainCalc = () => {
+const brainProgression = () => {
     const nameUser = getNameUser(); 
     let correctAnswers = 0;
     while (correctAnswers<3) {
-        const answer = example();
+        const answer = getProgression();
         console.log(`Question: ${answer[0]}`);
         let userAnswer = readlineSync.question('Your answer: ');
         const check = userAnswer === answer[1]
@@ -17,21 +17,22 @@ const brainCalc = () => {
     console.log(`Congratulations, ${nameUser}`)
 }
 
-const example = () => {
-    let result = 0;
-    let randomNum1 = getRandomInt(100);
-    let randomNum2 = getRandomInt(100);
-    const action = getRandomInt(3);
-    if (action === 0) {
-        result = randomNum1 + randomNum2;
-        return [`${randomNum1} + ${randomNum2}`, `${result}`]
-    } else if (action === 1) {
-        result = randomNum1 - randomNum2;
-        return [`${randomNum1} - ${randomNum2}`, `${result}`]
-    } else if (action === 2) {
-        result = randomNum1 * randomNum2;
-        return [`${randomNum1} * ${randomNum2}`, `${result}`]
+const getProgression = () => {
+    let startOfTheReport = getRandomInt(100);
+    let interval = getRandomInt(10, 1);
+    const listNum = [startOfTheReport];
+    for (let i = 0; i < getRandomInt(10, 5); i++) {
+        startOfTheReport += interval
+        listNum.push(startOfTheReport);
     }
+    let replacingNumber = getRandomInt(listNum.length);
+    let requiredNumber = listNum[replacingNumber]
+    listNum[replacingNumber] = '..';
+    let string = '';
+    for (let item of listNum) {
+        string += `${item} `
+    }
+    return [string, `${requiredNumber}`];
 }
 
-brainCalc()
+brainProgression()

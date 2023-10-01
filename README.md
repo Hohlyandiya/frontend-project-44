@@ -4,4 +4,5 @@
 
 asciinema url brain-even: https://asciinema.org/a/3gB5kZSUG4fdvrEb0Pua6Hrje
 asciinema url brain-calc: https://asciinema.org/a/YYedXCgcMPWEU83Qy99LMhLIA
-asciinema url brain-gcd:https://asciinema.org/a/Ug8nVWSOAjDrHU2x37HKhxlcK
+asciinema url brain-gcd: https://asciinema.org/a/Ug8nVWSOAjDrHU2x37HKhxlcK
+asciinema url brain-gcd: https://asciinema.org/a/Dh4pYZSfhqPmIPWeS6MWcp6PB

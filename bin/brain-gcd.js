@@ -18,8 +18,8 @@ const brainGCD = () => {
 }
 
 const checkPrimeNum = () => {
-    let randomNum1 = getRandomInt();
-    let randomNum2 = getRandomInt();
+    let randomNum1 = getRandomInt(100);
+    let randomNum2 = getRandomInt(100);
     if (Math.max(randomNum1, randomNum2) % Math.min(randomNum1, randomNum2) === 0) {
         return [`${randomNum1} ${randomNum2}`, `${Math.min(randomNum1, randomNum2)}`];
     }

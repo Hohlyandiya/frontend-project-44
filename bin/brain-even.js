@@ -7,7 +7,7 @@ const brainEven = () => {
     const nameUser = getNameUser(); 
     let correctAnswers = 0;
     while (correctAnswers<3) {
-        let randomNum = getRandomInt();
+        let randomNum = getRandomInt(100);
         console.log(`Question: ${randomNum}`);
         let userAnswer = readlineSync.question('Your answer: ');
         let answer = '';
