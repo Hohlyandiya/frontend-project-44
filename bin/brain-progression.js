@@ -6,6 +6,7 @@ import readlineSync from '../readline-sync/lib/readline-sync.js'
 const brainProgression = () => {
     const nameUser = getNameUser(); 
     let correctAnswers = 0;
+    console.log('What number is missing in the progression?')
     while (correctAnswers<3) {
         const answer = getProgression();
         console.log(`Question: ${answer[0]}`);

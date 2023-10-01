@@ -6,6 +6,7 @@ import readlineSync from '../readline-sync/lib/readline-sync.js'
 const brainGCD = () => {
     const nameUser = getNameUser(); 
     let correctAnswers = 0;
+    console.log('Find the greatest common divisor of given numbers.')
     while (correctAnswers<3) {
         const answer = checkPrimeNum();
         console.log(`Question: ${answer[0]}`);

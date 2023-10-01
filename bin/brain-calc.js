@@ -6,6 +6,7 @@ import readlineSync from '../readline-sync/lib/readline-sync.js'
 const brainCalc = () => {
     const nameUser = getNameUser(); 
     let correctAnswers = 0;
+    console.log('What is the result of the expression?')
     while (correctAnswers<3) {
         const answer = example();
         console.log(`Question: ${answer[0]}`);
