@@ -3,18 +3,16 @@ import {getResultBrainEven} from '../src/index.js'
 import {getRandomInt} from '../src/random.js'
 import readlineSync from '../readline-sync/lib/readline-sync.js'
 
-const brainProgression = () => {
-    const nameUser = getNameUser(); 
-    let correctAnswers = 0;
+const brainProgression = (nameUser) => {
     console.log('Answer "yes" if given number is prime. Otherwise answer "no".')
-    while (correctAnswers<3) {
+    for (let count = 0; count < 3; count) {
         let randomNum = getRandomInt(100);
         const answer = chekPrimeNum(randomNum);
         console.log(`Question: ${randomNum}`);
         let userAnswer = readlineSync.question('Your answer: ');
         const check = userAnswer === answer
         let result = getResultBrainEven(nameUser, check, userAnswer, answer);
-        result === 0 ? correctAnswers = 0 : correctAnswers += result;
+        result === 0 ? count = 0 : count += result;
     }
     console.log(`Congratulations, ${nameUser}`)
 }
@@ -28,4 +26,4 @@ const chekPrimeNum = (num) => {
     return num === 1 || num === 0 || num < 0 ? 'no' : 'yes';
 }
 
-brainProgression()
+brainProgression(getNameUser())

@@ -3,11 +3,9 @@ import {getResultBrainEven} from '../src/index.js'
 import {getRandomInt} from '../src/random.js'
 import readlineSync from '../readline-sync/lib/readline-sync.js'
 
-const brainEven = () => {
-    const nameUser = getNameUser(); 
-    let correctAnswers = 0;
+const brainEven = (nameUser) => {
     console.log('Answer "yes" if the number is even, otherwise answer "no".')
-    while (correctAnswers<3) {
+    for (let count = 0; count < 3; count) {
         let randomNum = getRandomInt(100);
         console.log(`Question: ${randomNum}`);
         let userAnswer = readlineSync.question('Your answer: ');
@@ -15,9 +13,9 @@ const brainEven = () => {
         randomNum % 2 === 0 ? answer = 'yes' : answer = 'no';
         const check = userAnswer === answer ;
         let result = getResultBrainEven(nameUser, check, userAnswer, answer);
-        result === 0 ? correctAnswers = 0 : correctAnswers += result;
+        result === 0 ? count = 0 : count += result;
     }
     console.log(`Congratulations, ${nameUser}`)
 }
 
-brainEven()
+brainEven(getNameUser())

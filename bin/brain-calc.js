@@ -3,17 +3,15 @@ import {getResultBrainEven} from '../src/index.js'
 import {getRandomInt} from '../src/random.js'
 import readlineSync from '../readline-sync/lib/readline-sync.js'
 
-const brainCalc = () => {
-    const nameUser = getNameUser(); 
-    let correctAnswers = 0;
+const brainCalc = (nameUser) => {
     console.log('What is the result of the expression?')
-    while (correctAnswers<3) {
+    for (let count = 0; count < 3; count) {
         const answer = example();
         console.log(`Question: ${answer[0]}`);
         let userAnswer = readlineSync.question('Your answer: ');
         const check = userAnswer === answer[1]
         let result = getResultBrainEven(nameUser, check, userAnswer, answer[1]);
-        result === 0 ? correctAnswers = 0 : correctAnswers += result;
+        result === 0 ? count = 0 : count += result;
     }
     console.log(`Congratulations, ${nameUser}`)
 }
@@ -35,4 +33,4 @@ const example = () => {
     }
 }
 
-brainCalc()
+brainCalc(getNameUser())
