@@ -1,4 +1,6 @@
 import {getNameUser} from "../src/cli.js";
 
-getNameUser();
+const brainGames = () => getNameUser();
+
+brainGames();
 
