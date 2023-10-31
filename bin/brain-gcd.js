@@ -1,28 +1,27 @@
 import {getResultBrainEven} from '../src/index.js';
 import {getRandomInt} from '../src/random.js';
-import readlineSync from '../readline-sync/lib/readline-sync.js';
 import { startBrainGame } from '../src/game.js';
 
 export const brainGCD = (nameUser) => {
-        const answer = checkPrimeNum();
-        console.log(`Question: ${answer[0]}`);
-        let userAnswer = readlineSync.question('Your answer: ');
-        const check = userAnswer === answer[1]
-        let result = getResultBrainEven(nameUser, check, userAnswer, answer[1]);
-        return result
-}
-
-const checkPrimeNum = () => {
     let randomNum1 = getRandomInt(100);
     let randomNum2 = getRandomInt(100);
-    if (Math.max(randomNum1, randomNum2) % Math.min(randomNum1, randomNum2) === 0) {
-        return [`${randomNum1} ${randomNum2}`, `${Math.min(randomNum1, randomNum2)}`];
+    const expression = getExpression(randomNum1, randomNum2);
+    const answer = checkPrimeNum(randomNum1, randomNum2);
+    let result = getResultBrainEven(nameUser, answer, expression);
+    return result
+}
+
+const checkPrimeNum = (num1, num2) => {
+    if (Math.max(num1, num2) % Math.min(num1, num2) === 0) {
+        return [`${num1} ${num2}`, `${Math.min(num1, num2)}`];
     }
-    let primeMultipliersNum1 = getPrimeFactors(randomNum1);
-    let primeMultipliersNum2 = getPrimeFactors(randomNum2);
-    let result = [`${randomNum1} ${randomNum2}`, `${serchGCD(primeMultipliersNum1, primeMultipliersNum2)}`];
+    let primeMultipliersNum1 = getPrimeFactors(num1);
+    let primeMultipliersNum2 = getPrimeFactors(num2);
+    let result = `${serchGCD(primeMultipliersNum1, primeMultipliersNum2)}`;
     return result;
 }
+
+const getExpression = (num1, num2) => `${num1} ${num2}`;
 
 const getPrimeFactors = (randomNum) => {
     const primeDivisorMultipliers = []

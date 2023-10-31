@@ -5,12 +5,9 @@ import { startBrainGame } from '../src/game.js';
 
 export const brainEven = (nameUser) => {
     let randomNum = getRandomInt(100);
-    console.log(`Question: ${randomNum}`);
-    let userAnswer = readlineSync.question('Your answer: ');
-    let answer = '';
-    randomNum % 2 === 0 ? answer = 'yes' : answer = 'no';
-    const check = userAnswer === answer ;
-    let result = getResultBrainEven(nameUser, check, userAnswer, answer);
+    const expression = randomNum;
+    const answer = randomNum % 2 === 0 ? 'yes' : 'no';
+    let result = getResultBrainEven(nameUser, answer, expression);
     return result
 }
 

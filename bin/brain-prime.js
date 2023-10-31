@@ -5,11 +5,9 @@ import { startBrainGame } from "../src/game.js";
 
 export const brainPrime = (nameUser) => {
         let randomNum = getRandomInt(100);
+        const expression = randomNum;
         const answer = chekPrimeNum(randomNum);
-        console.log(`Question: ${randomNum}`);
-        let userAnswer = readlineSync.question('Your answer: ');
-        const check = userAnswer === answer;
-        let result = getResultBrainEven(nameUser, check, userAnswer, answer);
+        let result = getResultBrainEven(nameUser, answer, expression);
         return result;
 }
 
