@@ -1,19 +1,15 @@
-import {getNameUser} from "../src/cli.js";
-import {getResultBrainEven} from '../src/index.js'
-import {getRandomInt} from '../src/random.js'
-import readlineSync from '../readline-sync/lib/readline-sync.js'
+import {getResultBrainEven} from '../src/index.js';
+import {getRandomInt} from '../src/random.js';
+import readlineSync from '../readline-sync/lib/readline-sync.js';
+import { startBrainGame } from "../src/game.js";
 
-const brainProgression = (nameUser) => {
-    console.log('What number is missing in the progression?')
-    for (let count = 0; count < 3; count) {
+export const brainProgression = (nameUser) => {
         const answer = getProgression();
         console.log(`Question: ${answer[0]}`);
         let userAnswer = readlineSync.question('Your answer: ');
-        const check = userAnswer === answer[1]
+        const check = userAnswer === answer[1];
         let result = getResultBrainEven(nameUser, check, userAnswer, answer[1]);
-        result === 0 ? count = 0 : count += result;
-    }
-    console.log(`Congratulations, ${nameUser}`)
+        return result
 }
 
 const getProgression = () => {
@@ -21,17 +17,17 @@ const getProgression = () => {
     let interval = getRandomInt(10, 1);
     const listNum = [startOfTheReport];
     for (let i = 0; i < getRandomInt(10, 5); i++) {
-        startOfTheReport += interval
+        startOfTheReport += interval;
         listNum.push(startOfTheReport);
     }
     let replacingNumber = getRandomInt(listNum.length);
-    let requiredNumber = listNum[replacingNumber]
+    let requiredNumber = listNum[replacingNumber];
     listNum[replacingNumber] = '..';
     let string = '';
     for (let item of listNum) {
-        string += `${item} `
+        string += `${item} `;
     }
     return [string, `${requiredNumber}`];
 }
 
-brainProgression(getNameUser())
+startBrainGame(brainProgression, 'brainProgression');

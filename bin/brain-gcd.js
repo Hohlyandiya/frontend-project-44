@@ -1,19 +1,15 @@
-import {getNameUser} from "../src/cli.js";
-import {getResultBrainEven} from '../src/index.js'
-import {getRandomInt} from '../src/random.js'
-import readlineSync from '../readline-sync/lib/readline-sync.js'
+import {getResultBrainEven} from '../src/index.js';
+import {getRandomInt} from '../src/random.js';
+import readlineSync from '../readline-sync/lib/readline-sync.js';
+import { startBrainGame } from '../src/game.js';
 
-const brainGCD = (nameUser) => {
-    console.log('Find the greatest common divisor of given numbers.')
-    for (let count = 0; count < 3; count) {
+export const brainGCD = (nameUser) => {
         const answer = checkPrimeNum();
         console.log(`Question: ${answer[0]}`);
         let userAnswer = readlineSync.question('Your answer: ');
         const check = userAnswer === answer[1]
         let result = getResultBrainEven(nameUser, check, userAnswer, answer[1]);
-        result === 0 ? count = 0 : count += result;
-    }
-    console.log(`Congratulations, ${nameUser}`)
+        return result
 }
 
 const checkPrimeNum = () => {
@@ -52,4 +48,4 @@ const serchGCD = (primeMultipliersNum1, primeMultipliersNum2) => {
     return result;
 }
 
-brainGCD(getNameUser());
+startBrainGame(brainGCD, 'brainGCD');
