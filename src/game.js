@@ -1,7 +1,7 @@
-import {getNameUser} from "../src/cli.js";
+import { getBeginGame } from "../bin/brain-games";
 
 export const startBrainGame = (game, nameGame) => {
-    const nameUser = getNameUser();
+    const nameUser = getBeginGame();
     let count = 0;
     switch (nameGame) {
         case 'brainEven':

@@ -1,13 +1,12 @@
-import {getResultBrainEven} from '../src/index.js';
+import {getResultBrainGame} from '../src/index.js';
 import {getRandomInt} from '../src/random.js';
-import readlineSync from '../readline-sync/lib/readline-sync.js';
 import { startBrainGame } from "../src/game.js";
 
 export const brainPrime = (nameUser) => {
         let randomNum = getRandomInt(100);
         const expression = randomNum;
         const answer = chekPrimeNum(randomNum);
-        let result = getResultBrainEven(nameUser, answer, expression);
+        let result = getResultBrainGame(nameUser, answer, expression);
         return result;
 }
 

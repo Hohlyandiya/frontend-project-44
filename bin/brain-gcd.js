@@ -1,4 +1,4 @@
-import {getResultBrainEven} from '../src/index.js';
+import {getResultBrainGame} from '../src/index.js';
 import {getRandomInt} from '../src/random.js';
 import { startBrainGame } from '../src/game.js';
 
@@ -7,7 +7,7 @@ export const brainGCD = (nameUser) => {
     let randomNum2 = getRandomInt(100);
     const expression = getExpression(randomNum1, randomNum2);
     const answer = checkPrimeNum(randomNum1, randomNum2);
-    let result = getResultBrainEven(nameUser, answer, expression);
+    let result = getResultBrainGame(nameUser, answer, expression);
     return result
 }
 

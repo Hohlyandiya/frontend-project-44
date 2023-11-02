@@ -1,6 +1,6 @@
 import readlineSync from '../readline-sync/lib/readline-sync.js';
 
-export const getResultBrainEven = (nameUser, answer, expression) => {
+export const getResultBrainGame = (nameUser, answer, expression) => {
     console.log(`Question: ${expression}`);
     let userAnswer = readlineSync.question('Your answer: ');
     if (answer === userAnswer) {

@@ -1,4 +1,4 @@
-import {getResultBrainEven} from '../src/index.js';
+import {getResultBrainGame} from '../src/index.js';
 import {getRandomInt} from '../src/random.js';
 import { startBrainGame } from "../src/game.js";
 
@@ -14,7 +14,7 @@ export const brainProgression = (nameUser) => {
         return arr.join(' ');
     }
     const expression = getExpression();
-    let result = getResultBrainEven(nameUser, answer, expression);
+    let result = getResultBrainGame(nameUser, answer, expression);
     return result
 }
 

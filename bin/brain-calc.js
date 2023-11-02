@@ -1,4 +1,4 @@
-import {getResultBrainEven} from '../src/index.js';
+import {getResultBrainGame} from '../src/index.js';
 import {getRandomInt} from '../src/random.js';
 import { startBrainGame } from "../src/game.js";
 
@@ -8,7 +8,7 @@ export const brainCalc = (nameUser) => {
     const action = getRandomInt(3);
     const answer = getAnswer(randomNum1, randomNum2, action);
     const expression = getExpression(randomNum1, randomNum2, action);
-    let result = getResultBrainEven(nameUser, answer, expression);
+    let result = getResultBrainGame(nameUser, answer, expression);
     return result
 }
 
