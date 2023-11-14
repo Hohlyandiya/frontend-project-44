@@ -1,4 +1,4 @@
-import {getNameUser} from "../cli.js";
+import {getNameUser} from "../src/cli.js";
 
 const getBeginGame = () => getNameUser();
 
