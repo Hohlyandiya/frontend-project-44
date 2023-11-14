@@ -1,6 +1,6 @@
-import {getResultBrainGame} from '../src/index.js';
-import {getRandomInt} from '../src/random.js';
-import { startBrainGame } from '../src/game.js';
+import {getResultBrainGame} from '../index.js';
+import {getRandomInt} from '../random.js';
+import { startBrainGame } from '../game.js';
 
 export const brainEven = (nameUser) => {
     let randomNum = getRandomInt(100);
@@ -10,4 +10,4 @@ export const brainEven = (nameUser) => {
     return result
 }
 
-startBrainGame(brainEven, 'brainEven');
+startBrainGame(brainEven, 'Answer "yes" if the number is even, otherwise answer "no".');
