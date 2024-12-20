@@ -1,6 +1,6 @@
 import {getResultBrainGame} from '../index.js';
 import {getRandomInt} from '../random.js';
-import { startBrainGame } from '../game.js';
+import { startBrainGame } from '../../bin/game.js';
 
 export const brainGCD = (nameUser) => {
     let randomNum1 = getRandomInt(100);
