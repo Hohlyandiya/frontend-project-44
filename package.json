@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "",
+  "description": "Набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -102,6 +102,7 @@
     "prelude-ls": "^1.2.1",
     "punycode": "^2.3.0",
     "queue-microtask": "^1.2.3",
+    "readline-sync": "^1.4.10",
     "resolve-from": "^4.0.0",
     "reusify": "^1.0.4",
     "rimraf": "^3.0.2",

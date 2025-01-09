@@ -1,5 +1,5 @@
 install:
-	npm ci
+	npm сi
 
 brain-games:
 	node src/games/brain-games.js
