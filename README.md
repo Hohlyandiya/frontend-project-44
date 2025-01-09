@@ -37,10 +37,10 @@
 
 Для запуска игр запустите консоль, а после перейдите в корневую папку проекта. После при помощи node запустите одну из следующих игр:
 
-- Определение четного числа node src/games/brain-even.js
-- Калькулятор node src/games/brain-calc.js
-- Определение наибольшего общего делителя node src/games/brain-gcd.js
-- Определение простого числаnode src/games/brain-prime.js
-- Прогрессия node src/games/brain-progression.js
+- Определение четного числа node src/games/brain-even.js (https://asciinema.org/a/3gB5kZSUG4fdvrEb0Pua6Hrje)
+- Калькулятор node src/games/brain-calc.js (https://asciinema.org/a/YYedXCgcMPWEU83Qy99LMhLIA)
+- Определение наибольшего общего делителя node src/games/brain-gcd.js (https://asciinema.org/a/Ug8nVWSOAjDrHU2x37HKhxlcK)
+- Определение простого числаnode src/games/brain-prime.js (https://asciinema.org/a/lHTGLilBzncPsSTLe5cm7vHtO)
+- Прогрессия node src/games/brain-progression.js (https://asciinema.org/a/Dh4pYZSfhqPmIPWeS6MWcp6PB)
 
 
