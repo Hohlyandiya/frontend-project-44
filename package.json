@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "Набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга",
+  "description": "A set of five console games built on the principles of popular mobile applications for brain training",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
