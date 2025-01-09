@@ -1,4 +1,4 @@
-import readlineSync from '../readline-sync/lib/readline-sync.js';
+import readlineSync from '../readline-sync';
 
 export const getResultBrainGame = (nameUser, answer, expression) => {
     console.log(`Question: ${expression}`);
