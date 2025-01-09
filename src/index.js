@@ -1,13 +1,18 @@
 import readlineSync from 'readline-sync';
 
-export const getResultBrainGame = (nameUser, answer, expression) => {
-    console.log(`Question: ${expression}`);
-    let userAnswer = readlineSync.question('Your answer: ');
-    if (answer === userAnswer) {
-        console.log('Correct!');
-        return 1;
-    } else {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'. \n Let's try again, ${nameUser}`)
-        return 0;
-    }  
-}
+const getResultBrainGame = (nameUser, answer, expression) => {
+  let count = 0;
+  console.log(`Question: ${expression}`);
+  const userAnswer = readlineSync.question('Your answer: ');
+  if (answer === userAnswer) {
+    console.log('Correct!');
+    count = 1;
+  } else {
+    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'. \n Let's try again, ${nameUser}`);
+    count = 0;
+  }
+
+  return count;
+};
+
+export default getResultBrainGame;

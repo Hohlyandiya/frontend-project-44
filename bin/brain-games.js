@@ -1,6 +1,5 @@
-import { getNameUser } from "../src/cli.js";
+import getNameUser from '../src/cli';
 
 const getBeginGame = () => getNameUser();
 
 getBeginGame();
-
