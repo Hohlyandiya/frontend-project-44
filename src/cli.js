@@ -1,4 +1,4 @@
-import readlineSync from 'readline-sync/lib/readline-sync.js'
+import readlineSync from 'readline-sync'
 
 export const getNameUser = () => {
     console.log('Welcome to the Brain Games!');
