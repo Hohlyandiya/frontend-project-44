@@ -7,7 +7,7 @@ const getArray = () => {
   const interval = getRandomInt(10, 1);
   const maxLength = getRandomInt(10, 5);
   const listNum = [startOfTheReport];
-  for (let i = 0; i < maxLength; i++) {
+  for (let i = 0; i < maxLength; i += 1) {
     startOfTheReport += interval;
     listNum.push(startOfTheReport);
   }
