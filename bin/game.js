@@ -6,7 +6,7 @@ const startBrainGame = (game, nameGame) => {
   let count = 0;
   while (count < 3 && count >= 0) {
     const result = game(nameUser);
-    count = result !== 0 ? count += result : count = 0;
+    count = result > 0 ? count += result : count = -1;
   }
   const result = count !== 3 ? `Let's try again, ${nameUser}!` : `Congratulations, ${nameUser}!`;
   console.log(result);

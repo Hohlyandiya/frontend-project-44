@@ -9,7 +9,7 @@ const getResultBrainGame = (nameUser, answer, expression) => {
     count = 1;
   } else {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
-    count = -3;
+    count = -1;
   }
 
   return count;
