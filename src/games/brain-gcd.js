@@ -4,7 +4,7 @@ import getRandomInt from '../random.js';
 const checkPrimeNum = (num1, num2) => {
   let firstNum = num1;
   let secondNum = num2;
-  while (num1 !== 0 && num2 !== 0) {
+  while (firstNum !== 0 && secondNum !== 0) {
     firstNum > secondNum ? firstNum %= secondNum : secondNum %= firstNum;
   }
   return `${firstNum + secondNum}`;
