@@ -1,6 +1,5 @@
 import getResultBrainGame from '../index.js';
 import getRandomInt from '../random.js';
-import startBrainGame from '../../bin/game.js';
 
 const chekPrimeNum = (num) => {
   for (let item = 2; item < num; item += 1) {
@@ -19,4 +18,4 @@ const brainPrime = (nameUser) => {
   return result;
 };
 
-startBrainGame(brainPrime, 'Answer "yes" if given number is prime. Otherwise answer "no".');
+export default brainPrime;

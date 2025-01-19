@@ -1,6 +1,5 @@
 import getResultBrainGame from '../index.js';
 import getRandomInt from '../random.js';
-import startBrainGame from '../../bin/game.js';
 
 const getArray = () => {
   let startOfTheReport = getRandomInt(100);
@@ -30,4 +29,4 @@ const brainProgression = (nameUser) => {
   return result;
 };
 
-startBrainGame(brainProgression, 'What number is missing in the progression?');
+export default brainProgression;

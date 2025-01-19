@@ -1,6 +1,5 @@
 import getResultBrainGame from '../index.js';
 import getRandomInt from '../random.js';
-import startBrainGame from '../../bin/game.js';
 
 const getAnswer = (num1, num2, action) => {
   let result = 0;
@@ -53,4 +52,4 @@ const brainCalc = (nameUser) => {
   return result;
 };
 
-startBrainGame(brainCalc, 'What is the result of the expression?');
+export default brainCalc;

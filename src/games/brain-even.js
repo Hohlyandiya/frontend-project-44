@@ -1,6 +1,5 @@
 import getResultBrainGame from '../index.js';
 import getRandomInt from '../random.js';
-import startBrainGame from '../../bin/game.js';
 
 const brainEven = (nameUser) => {
   const randomNum = getRandomInt(100);
@@ -10,4 +9,4 @@ const brainEven = (nameUser) => {
   return result;
 };
 
-startBrainGame(brainEven, 'Answer "yes" if the number is even, otherwise answer "no".');
+export default brainEven;
