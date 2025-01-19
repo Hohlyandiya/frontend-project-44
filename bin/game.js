@@ -8,7 +8,7 @@ const startBrainGame = (game, nameGame) => {
     const result = game(nameUser);
     count = result !== 0 ? count += result : count = 0;
   }
-  console.log(`Congratulations, ${nameUser}`);
+  console.log(`Congratulations, ${nameUser}!`);
 };
 
 export default startBrainGame;
