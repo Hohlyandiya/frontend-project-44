@@ -41,14 +41,14 @@ const getExpression = (num1, num2, action) => {
   return result;
 };
 
-const brainCalc = (nameUser) => {
+const brainCalc = () => {
   const randomNum1 = getRandomInt(100);
   const randomNum2 = getRandomInt(100);
   const actions = ['+', '-', '*'];
   const action = getRandomInt(3);
   const answer = getAnswer(randomNum1, randomNum2, actions[action]);
   const expression = getExpression(randomNum1, randomNum2, actions[action]);
-  const result = getResultBrainGame(nameUser, answer, expression);
+  const result = getResultBrainGame(answer, expression);
   return result;
 };
 

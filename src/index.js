@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const getResultBrainGame = (nameUser, answer, expression) => {
+const getResultBrainGame = (answer, expression) => {
   let count = 0;
   console.log(`Question: ${expression}`);
   const userAnswer = readlineSync.question('Your answer: ');

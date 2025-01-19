@@ -10,11 +10,11 @@ const chekPrimeNum = (num) => {
   return num === 1 || num === 0 || num < 0 ? 'no' : 'yes';
 };
 
-const brainPrime = (nameUser) => {
+const brainPrime = () => {
   const randomNum = getRandomInt(100);
   const expression = randomNum;
   const answer = chekPrimeNum(randomNum);
-  const result = getResultBrainGame(nameUser, answer, expression);
+  const result = getResultBrainGame(answer, expression);
   return result;
 };
 

@@ -13,7 +13,7 @@ const getArray = () => {
   return listNum;
 };
 
-const brainProgression = (nameUser) => {
+const brainProgression = () => {
   const arr = getArray();
   const getAnswer = () => {
     const numPosition = getRandomInt(arr.length);
@@ -25,7 +25,7 @@ const brainProgression = (nameUser) => {
     return arr.join(' ');
   };
   const expression = getExpression();
-  const result = getResultBrainGame(nameUser, answer, expression);
+  const result = getResultBrainGame(answer, expression);
   return result;
 };
 

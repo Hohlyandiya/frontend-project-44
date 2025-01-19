@@ -12,12 +12,12 @@ const checkPrimeNum = (num1, num2) => {
 
 const getExpression = (num1, num2) => `${num1} ${num2}`;
 
-const brainGCD = (nameUser) => {
+const brainGCD = () => {
   const randomNum1 = getRandomInt(100);
   const randomNum2 = getRandomInt(100);
   const expression = getExpression(randomNum1, randomNum2);
   const answer = checkPrimeNum(randomNum1, randomNum2);
-  const result = getResultBrainGame(nameUser, answer, expression);
+  const result = getResultBrainGame(answer, expression);
   return result;
 };
 
