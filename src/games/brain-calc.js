@@ -1,6 +1,6 @@
-import getResultBrainGame from '../index';
-import getRandomInt from '../random';
-import startBrainGame from '../../bin/game';
+import getResultBrainGame from '../index.js';
+import getRandomInt from '../random.js';
+import startBrainGame from '../../bin/game.js';
 
 const getAnswer = (num1, num2, action) => {
   let result = 0;
