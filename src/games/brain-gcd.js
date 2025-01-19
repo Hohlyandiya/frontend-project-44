@@ -4,10 +4,16 @@ import getRandomInt from '../random.js';
 const checkPrimeNum = (num1, num2) => {
   let firstNum = num1;
   let secondNum = num2;
+  let solution = 0;
   while (firstNum !== 0 && secondNum !== 0) {
-    firstNum > secondNum ? firstNum %= secondNum : secondNum %= firstNum;
+    if (firstNum > secondNum) {
+      firstNum %= secondNum;
+    } else {
+      secondNum %= firstNum;
+    }
+    solution = firstNum + secondNum;
   }
-  return `${firstNum + secondNum}`;
+  return `${solution}`;
 };
 
 const getExpression = (num1, num2) => `${num1} ${num2}`;
