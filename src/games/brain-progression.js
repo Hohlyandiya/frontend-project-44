@@ -1,4 +1,4 @@
-import getResultBrainGame from '../index.js';
+import { getResultBrainGame, startBrainGame } from '../index.js';
 import getRandomInt from '../random.js';
 
 const getArray = () => {
@@ -14,19 +14,23 @@ const getArray = () => {
 };
 
 const brainProgression = () => {
-  const arr = getArray();
-  const getAnswer = () => {
-    const numPosition = getRandomInt(arr.length);
-    return `${arr[numPosition]}`;
+  const getSolution = () => {
+    const arr = getArray();
+    const getAnswer = () => {
+      const numPosition = getRandomInt(arr.length);
+      return `${arr[numPosition]}`;
+    };
+    const answer = getAnswer();
+    const getExpression = () => {
+      arr[arr.indexOf(Number(answer))] = '..';
+      return arr.join(' ');
+    };
+    const expression = getExpression();
+    const result = getResultBrainGame(answer, expression);
+    return result;
   };
-  const answer = getAnswer();
-  const getExpression = () => {
-    arr[arr.indexOf(Number(answer))] = '..';
-    return arr.join(' ');
-  };
-  const expression = getExpression();
-  const result = getResultBrainGame(answer, expression);
-  return result;
+  const descriptionGame = 'What number is missing in the progression?';
+  startBrainGame(getSolution, descriptionGame);
 };
 
 export default brainProgression;

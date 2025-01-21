@@ -1,4 +1,4 @@
-import getResultBrainGame from '../index.js';
+import { getResultBrainGame, startBrainGame } from '../index.js';
 import getRandomInt from '../random.js';
 
 const chekPrimeNum = (num) => {
@@ -11,11 +11,15 @@ const chekPrimeNum = (num) => {
 };
 
 const brainPrime = () => {
-  const randomNum = getRandomInt(100);
-  const expression = randomNum;
-  const answer = chekPrimeNum(randomNum);
-  const result = getResultBrainGame(answer, expression);
-  return result;
+  const getSolution = () => {
+    const randomNum = getRandomInt(100);
+    const expression = randomNum;
+    const answer = chekPrimeNum(randomNum);
+    const result = getResultBrainGame(answer, expression);
+    return result;
+  };
+  const descriptionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  startBrainGame(getSolution, descriptionGame);
 };
 
 export default brainPrime;

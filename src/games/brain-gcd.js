@@ -1,4 +1,4 @@
-import getResultBrainGame from '../index.js';
+import { getResultBrainGame, startBrainGame } from '../index.js';
 import getRandomInt from '../random.js';
 
 const checkPrimeNum = (num1, num2) => {
@@ -19,12 +19,16 @@ const checkPrimeNum = (num1, num2) => {
 const getExpression = (num1, num2) => `${num1} ${num2}`;
 
 const brainGCD = () => {
-  const randomNum1 = getRandomInt(100);
-  const randomNum2 = getRandomInt(100);
-  const expression = getExpression(randomNum1, randomNum2);
-  const answer = checkPrimeNum(randomNum1, randomNum2);
-  const result = getResultBrainGame(answer, expression);
-  return result;
+  const getSolution = () => {
+    const randomNum1 = getRandomInt(100);
+    const randomNum2 = getRandomInt(100);
+    const expression = getExpression(randomNum1, randomNum2);
+    const answer = checkPrimeNum(randomNum1, randomNum2);
+    const result = getResultBrainGame(answer, expression);
+    return result;
+  };
+  const descriptionGame = 'Find the greatest common divisor of given numbers.';
+  startBrainGame(getSolution, descriptionGame);
 };
 
 export default brainGCD;

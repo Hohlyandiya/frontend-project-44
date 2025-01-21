@@ -1,6 +1,13 @@
 import readlineSync from 'readline-sync';
 
-const getResultBrainGame = (answer, expression) => {
+export const getNameUser = () => {
+  console.log('Welcome to the Brain Games!');
+  const nameUser = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${nameUser}!`);
+  return nameUser;
+};
+
+export const getResultBrainGame = (answer, expression) => {
   let count = 0;
   console.log(`Question: ${expression}`);
   const userAnswer = readlineSync.question('Your answer: ');
@@ -15,4 +22,14 @@ const getResultBrainGame = (answer, expression) => {
   return count;
 };
 
-export default getResultBrainGame;
+export const startBrainGame = (game, descriptionGame) => {
+  const nameUser = getNameUser();
+  console.log(descriptionGame);
+  let count = 0;
+  while (count < 3 && count >= 0) {
+    const result = game();
+    count = result > 0 ? count += result : count = -1;
+  }
+  const result = count !== 3 ? `Let's try again, ${nameUser}!` : `Congratulations, ${nameUser}!`;
+  console.log(result);
+};
