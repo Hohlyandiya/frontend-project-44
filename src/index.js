@@ -18,7 +18,7 @@ const runGameEngine = (getAnswerAndExpression, descriptionGame) => {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
-      return `Let's try again, ${nameUser}!`;
+      return console.log(`Let's try again, ${nameUser}!`);
     }
   }
   return console.log(`Congratulations, ${nameUser}!`);
