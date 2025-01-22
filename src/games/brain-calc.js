@@ -1,59 +1,33 @@
-import { getResultBrainGame, startBrainGame } from '../index.js';
-import getRandomInt from '../random.js';
+import runGameEngine from '../index.js';
+import getRandomNum from '../random.js';
 
-const getAnswer = (num1, num2, action) => {
-  let result = 0;
+const getTaskAnswer = (num1, num2, action) => {
   switch (action) {
     case '+':
-      result = num1 + num2;
-      break;
+      return num1 + num2;
     case '-':
-      result = num1 - num2;
-      break;
+      return num1 - num2;
     case '*':
-      result = num1 * num2;
-      break;
+      return num1 * num2;
     default:
-      result = 0;
-      break;
+      throw new Error('Action not provided for by the program');
   }
-
-  return `${result}`;
 };
 
-const getExpression = (num1, num2, action) => {
-  let result = '';
-  switch (action) {
-    case '+':
-      result = `${num1} ${action} ${num2}`;
-      break;
-    case '-':
-      result = `${num1} ${action} ${num2}`;
-      break;
-    case '*':
-      result = `${num1} ${action} ${num2}`;
-      break;
-    default:
-      result = 'Error';
-      break;
-  }
-
-  return result;
-};
-
-const brainCalc = () => {
-  const getSolution = () => {
-    const randomNum1 = getRandomInt(100);
-    const randomNum2 = getRandomInt(100);
+const runBrainCalc = () => {
+  const getAnswerAndExpression = () => {
+    const limitNumber = 100;
+    const randomNum1 = getRandomNum(limitNumber);
+    const randomNum2 = getRandomNum(limitNumber);
     const actions = ['+', '-', '*'];
-    const action = getRandomInt(3);
-    const answer = getAnswer(randomNum1, randomNum2, actions[action]);
-    const expression = getExpression(randomNum1, randomNum2, actions[action]);
-    const result = getResultBrainGame(answer, expression);
+    const action = getRandomNum(actions.length);
+    const answer = String(getTaskAnswer(randomNum1, randomNum2, actions[action]));
+    const expression = `${randomNum1} ${actions[action]} ${randomNum2}`;
+    const result = [answer, expression];
     return result;
   };
   const descriptionGame = 'What is the result of the expression?';
-  startBrainGame(getSolution, descriptionGame);
+  runGameEngine(getAnswerAndExpression, descriptionGame);
 };
 
-export default brainCalc;
+export default runBrainCalc;

@@ -1,25 +1,26 @@
-import { getResultBrainGame, startBrainGame } from '../index.js';
-import getRandomInt from '../random.js';
+import runGameEngine from '../index.js';
+import getRandomNum from '../random.js';
 
-const chekPrimeNum = (num) => {
+const isNumberPrime = (num) => {
   for (let item = 2; item < num; item += 1) {
     if (num % item === 0) {
-      return 'no';
+      return false;
     }
   }
-  return num === 1 || num === 0 || num < 0 ? 'no' : 'yes';
+  return num !== 1 || num !== 0 || num > 0;
 };
 
-const brainPrime = () => {
-  const getSolution = () => {
-    const randomNum = getRandomInt(100);
+const runBrainPrime = () => {
+  const getAnswerAndExpression = () => {
+    const limitNumber = 100;
+    const randomNum = getRandomNum(limitNumber);
     const expression = randomNum;
-    const answer = chekPrimeNum(randomNum);
-    const result = getResultBrainGame(answer, expression);
+    const answer = isNumberPrime(randomNum) ? 'yes' : 'no';
+    const result = [answer, expression];
     return result;
   };
   const descriptionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  startBrainGame(getSolution, descriptionGame);
+  runGameEngine(getAnswerAndExpression, descriptionGame);
 };
 
-export default brainPrime;
+export default runBrainPrime;
