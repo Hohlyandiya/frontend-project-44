@@ -4,16 +4,16 @@ import getRandomNum from '../random.js';
 const getGCD = (num1, num2) => {
   let firstNum = num1;
   let secondNum = num2;
-  let CommonGreatestDivisor = 0;
+  let commonGreatestDivisor = 0;
   while (firstNum !== 0 && secondNum !== 0) {
     if (firstNum > secondNum) {
       firstNum %= secondNum;
     } else {
       secondNum %= firstNum;
     }
-    CommonGreatestDivisor = firstNum + secondNum;
+    commonGreatestDivisor = firstNum + secondNum;
   }
-  return CommonGreatestDivisor;
+  return commonGreatestDivisor;
 };
 
 const runBrainGCD = () => {
